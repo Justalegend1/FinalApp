@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">FinalApp</string>
-    <string name="Restart">Restart</string>
+    <string name="Restart">Новая игра</string>
     <string name="NewGame">New game</string>
-    <string name="Exit">Exit</string>
+    <string name="Exit">Выход</string>
+    <string name="Right">Право</string>
+    <string name="Left">Лево</string>
+    <string name="Score">Счёт</string>
 </resources>

@@ -2,8 +2,8 @@ package com.example.finalapp;
 
 import android.content.Context;
 
-public class Ship  extends SpaceBody {
-    public Ship(Context context) {
+public class Superman extends SpaceBody {
+    public Superman(Context context) {
         bitmapId = R.drawable.superman; // определяем начальные параметры
         size = 5;
         x=7;

@@ -4,13 +4,13 @@ import android.content.Context;
 
 import java.util.Random;
 
-public class Asteroid extends SpaceBody{
+public class Dot extends SpaceBody{
 
     private int radius = 2; // радиус
     private float minSpeed = (float) 0.1; // минимальная скорость
     private float maxSpeed = (float) 0.5; // максимальная скорость
 
-    public Asteroid(Context context) {
+    public Dot(Context context) {
         Random random = new Random();
 
         bitmapId = R.drawable.bluedot;

@@ -10,12 +10,12 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnTouchListener {
 
     public static boolean isLeftPressed = false; // нажата левая кнопка
     public static boolean isRightPressed = false; // нажата правая кнопка
-    public static boolean isMiddlePressed = false; // нажата средняя кнопка
 
     public void onCreate(Bundle savedInstanceState) {
 
@@ -25,8 +25,6 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
 
         LinearLayout gameLayout = findViewById(R.id.gameLayout); // находим gameLayout
         gameLayout.addView(gameView); // и добавляем в него gameView
-
-
 
         Button leftButton = findViewById(R.id.leftButton); // находим кнопки
         Button rightButton = findViewById(R.id.rightButton);
