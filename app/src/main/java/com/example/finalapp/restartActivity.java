@@ -19,6 +19,7 @@ public class restartActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //тут логика обработки функцией или напрямую можно
+                finish();
                 GameView.gameRunning = true;
                 Intent intent = new Intent(restartActivity.this, MainActivity.class);
                 startActivity(intent);
@@ -29,6 +30,9 @@ public class restartActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //тут логика закрытия приложения
                 finish();
+                System.exit(0);
+                finish();
+                System.exit(0);
             }
         });
 

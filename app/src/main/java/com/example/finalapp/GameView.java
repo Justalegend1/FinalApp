@@ -2,9 +2,12 @@ package com.example.finalapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.drawable.BitmapDrawable;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.widget.TextView;
@@ -27,7 +30,7 @@ public class GameView extends SurfaceView implements Runnable {
     private Canvas canvas;
     private SurfaceHolder surfaceHolder;
 
-    TextView scoreValue = findViewById(R.id.scoreValue);
+
 
 
 
@@ -50,6 +53,7 @@ public class GameView extends SurfaceView implements Runnable {
     @Override
     public void run() {
         while (gameRunning) {
+
             update();
             draw();
             checkCollision();
@@ -80,8 +84,8 @@ public class GameView extends SurfaceView implements Runnable {
 
             canvas = surfaceHolder.lockCanvas(); // закрываем canvas
 
-
-            canvas.drawColor(Color.BLACK); ; // заполняем фон чёрным
+            Bitmap notebookSheet = BitmapFactory.decodeResource(getResources(), R.drawable.background);
+            canvas.drawBitmap(notebookSheet, 0, 0, null);
 
             ship.drow(paint, canvas); // рисуем корабль
 
@@ -90,6 +94,7 @@ public class GameView extends SurfaceView implements Runnable {
             }
 
             surfaceHolder.unlockCanvasAndPost(canvas); // открываем canvas
+
         }
     }
 
@@ -105,6 +110,7 @@ public class GameView extends SurfaceView implements Runnable {
         for (Dot asteroid : asteroids) {
             if(asteroid.isCollision(ship.x, ship.y, ship.size)){
                 // игрок проиграл
+
                 gameRunning = false; // останавливаем игру
                 Intent intent = new Intent(getContext(),restartActivity.class);
                 getContext().startActivity(intent);
@@ -112,8 +118,9 @@ public class GameView extends SurfaceView implements Runnable {
             }
             else
             {
-                score++;
-//                scoreValue.setText(String.valueOf(score));
+
+                ++score;
+
             }
         }
     }
