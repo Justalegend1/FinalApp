@@ -1,6 +1,7 @@
 package com.example.finalapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -103,6 +104,8 @@ public class GameView extends SurfaceView implements Runnable {
             if(asteroid.isCollision(ship.x, ship.y, ship.size)){
                 // игрок проиграл
                 gameRunning = false; // останавливаем игру
+                Intent intent = new Intent(getContext(),restartActivity.class);
+                getContext().startActivity(intent);
                 // TODO добавить анимацию взрыва
             }
         }
@@ -117,17 +120,5 @@ public class GameView extends SurfaceView implements Runnable {
             currentTime ++;
         }
     }
-    Button restartButton = (Button) findViewById(R.id.Restart);
-        View.setOnClickListener(new View.OnClickListener() {
-        public void onClick(View view){
-            resetGame();
-        }
-    }
-        );
-    private static void resetGame() {
-        if (!gameRunning) {
-            gameRunning = true;
-            run();
-        }
-    }
+
 }

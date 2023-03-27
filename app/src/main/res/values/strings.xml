@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">FinalApp</string>
+    <string name="Restart">Restart</string>
+    <string name="NewGame">New game</string>
+    <string name="Exit">Exit</string>
 </resources>
